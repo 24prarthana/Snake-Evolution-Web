@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1420">
+    <title>Snake Evolution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <header class="top-bar">
+            <div class="brand">
+                <span class="snake-icon">🐍</span>
+                <div>
+                    <h1>Snake Evolution</h1>
+                    <p>EVOLVE. SURVIVE. DOMINATE.</p>
+                </div>
+            </div>
+            <div class="player-info">
+                <span id="playerName">Player</span>
+                <span class="online-dot"></span>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <div class="stat-card">
+                    <span>SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span>BEST</span>
+                    <strong id="bestScore">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span>LEVEL</span>
+                    <strong id="level">1</strong>
+                </div>
+            </section>
+
+            <section class="game-panel">
+                <div class="game-heading">
+                    <div>
+                        <h2>Evolution Arena</h2>
+                        <p id="gameStatus">Ready to play?</p>
+                    </div>
+                    <span class="level-tag" id="difficultyLabel">NORMAL</span>
+                </div>
+
+                <div class="canvas-wrapper">
+                    <canvas id="gameCanvas" width="600" height="400"></canvas>
+
+                    <div class="overlay" id="overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon" id="overlayIcon">🐍</div>
+                            <h2 id="overlayTitle">Snake Evolution</h2>
+                            <p id="overlayMessage">Collect food and grow your snake!</p>
+                            <button id="startBtn" class="primary-btn">START GAME</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-actions">
+                    <button id="pauseBtn" class="secondary-btn">Ⅱ Pause</button>
+                    <button id="restartBtn" class="secondary-btn">↻ Restart</button>
+                    <button id="soundBtn" class="secondary-btn">🔊 Sound ON</button>
+                </div>
+
+                <div class="mobile-controls">
+                    <button class="direction up" data-direction="up">▲</button>
+                    <div class="middle-controls">
+                        <button class="direction" data-direction="left">◀</button>
+                        <button class="direction" data-direction="down">▼</button>
+                        <button class="direction" data-direction="right">▶</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bottom-grid">
+                <div class="info-panel">
+                    <h3>🏆 Achievements</h3>
+                    <div id="achievements" class="achievement-list">
+                        <p>Start playing to unlock achievements!</p>
+                    </div>
+                </div>
+
+                <div class="info-panel">
+                    <h3>🥇 Leaderboard</h3>
+                    <ol id="leaderboard">
+                        <li>No scores yet. Be the first!</li>
+                    </ol>
+                </div>
+
+                <div class="info-panel">
+                    <h3>⚙️ Game Settings</h3>
+                    <label for="playerInput">Player name</label>
+                    <input id="playerInput" type="text" maxlength="16" placeholder="Enter your name">
+
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="normal" selected>Normal</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <button id="saveSettings" class="primary-btn small-btn">SAVE SETTINGS</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Snake Evolution Web Edition · Built with HTML, CSS & JavaScript</p>
+            <p>Desktop: Arrow Keys / WASD · Mobile: Swipe or use direction buttons</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
